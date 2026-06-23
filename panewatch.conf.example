@@ -1,0 +1,76 @@
+# PaneWatch Configuration
+# Format: label=command
+# Commands can include quoted arguments and paths with spaces
+#
+# LAYOUT IS AUTOMATIC based on number of active panes:
+#   1 pane  = full screen
+#   2 panes = side by side (wide terminal) or stacked (tall terminal)
+#   3 panes = one full width top, two side by side bottom
+#   4 panes = 2x2 grid
+
+# --- ACTIVE PANES (uncomment or add your own, max 4 recommended) ---
+#kernel=journalctl -f -k
+#journal=journalctl -f
+#auth=journalctl -f _COMM=sudo
+#syslog=tail -f /var/log/syslog
+
+# --- RECORDING ---
+# Uncomment to have every pane start recording to ~/panewatch_exports/
+# automatically on launch, instead of needing to press 'l' manually.
+#autorecord=true
+
+# --- COLOR OVERRIDES (defaults shown, available: white yellow red magenta green cyan blue) ---
+#color.normal=white
+#color.warning=yellow
+#color.error=red
+#color.denied=magenta
+#color.highlight=cyan
+
+# --- KEYWORD OVERRIDES (defaults shown) ---
+#keywords.warning=warning,warn
+#keywords.error=error,fail,critical,failed
+#keywords.denied=denied,permission
+
+# --- AVAILABLE LOGS REFERENCE (all commented out - uncomment to use) ---
+# SYSTEMD / JOURNAL
+#allboot=journalctl -f -b              # current boot only
+#unit=journalctl -f -u servicename     # specific service (replace servicename)
+#priority=journalctl -f -p err         # errors and above only
+#user=journalctl -f --user             # current user's journal only
+#input=journalctl -f _SUBSYSTEM=input  # keyboard/touchpad input events
+
+# RAW INPUT EVENTS (requires evtest or libinput)
+#keyboard=evtest /dev/input/eventN     # replace eventN with your device path (run as root)
+#keys=libinput debug-events --device /dev/input/eventN --show-keycodes
+
+# AUTHENTICATION & SECURITY
+#auth=tail -f /var/log/auth.log
+#secure=tail -f /var/log/secure
+#fail2ban=tail -f /var/log/fail2ban.log
+#sudo=journalctl -f _COMM=sudo
+
+# WEB SERVERS
+#apache=tail -f /var/log/apache2/access.log
+#apacheerr=tail -f /var/log/apache2/error.log
+#nginx=tail -f /var/log/nginx/access.log
+#nginxerr=tail -f /var/log/nginx/error.log
+
+# DATABASE
+#mysql=tail -f /var/log/mysql/error.log
+#postgres=tail -f /var/log/postgresql/postgresql-main.log
+
+# SYSTEM
+#syslog=tail -f /var/log/syslog
+#messages=tail -f /var/log/messages
+#boot=tail -f /var/log/boot.log
+#dpkg=tail -f /var/log/dpkg.log
+#dnf=tail -f /var/log/dnf.log
+
+# CRON
+#cron=tail -f /var/log/cron.log
+
+# MAIL
+#mail=tail -f /var/log/mail.log
+
+# CUSTOM / APP LOGS
+#myapp=tail -f /path/to/your/app.log

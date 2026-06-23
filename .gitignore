@@ -1,0 +1,20 @@
+# Personal config (copy panewatch.conf.example to ~/.panewatch.conf)
+.panewatch.conf
+
+# Export and recording output
+panewatch_exports/
+
+# Backups
+*.bak
+panewatch.py.*
+
+# Dev/session files
+panewatch_context.md
+panewatch_wishlist.md
+freeze_checklist.md
+freeze_addendum_*.md
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
